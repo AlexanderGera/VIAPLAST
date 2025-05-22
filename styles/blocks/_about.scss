@@ -1,0 +1,28 @@
+.about-text-holder {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px 50px;
+
+  .regular-text-font-style {
+    font-weight: 500;
+  }
+}
+
+.about-pictures-holder {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 15px;
+  flex-wrap: wrap;
+
+  &__picture {
+    width: 350px;
+    min-width: 285px;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+}

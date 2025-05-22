@@ -1,0 +1,71 @@
+//VARIABLES
+
+// fonts
+
+$titels-text-font: 'Montserrat', sans-serif;
+$regular-text-font: 'Open Sans', sans-serif;
+$lang-fonts: 'Roboto', sans-serif;
+
+// //colors & gradients
+
+$header-background: #f3f3f3;
+$section-border-style: 1px solid rgba(85, 183, 255, 0.5);
+$blue-main-color: #55B7FF;
+$title-font-color: #2C4058;
+
+//mixins
+
+@mixin header-footer-background-decoration {
+  background: url(../img/icons/city_bg.png), linear-gradient(251.06deg, #3C7FD4 -2.19%, #55B7FF 103.21%);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin header-menu-font-settings {
+  font-family: $regular-text-font;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  opacity: 0.90;
+}
+
+@mixin header-language-font-settings {
+  font-family: $lang-fonts;
+  color: #051445;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+
+@mixin title-font-settings {
+  font-family: $titels-text-font;
+  color: $title-font-color;
+  text-transform: uppercase;
+}
+
+@mixin regular-text-font-style {
+  font-family: $regular-text-font;
+  color: #2C4058;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+}
+
+@mixin button-regular-decoration {
+  display: block;
+  background: none;
+  border: 1px solid #2C4058;
+  border-radius: 10px;
+  @include regular-text-font-style;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+# os
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# PHP
+*.log
+*.cache
+*.tmp
+composer.lock
+vendor/
+
+# Node.js
+node_modules/
+dist/
+build/
+
+#environment
+.env
+
+#file with sending form throught e-mail settings
+mailer/smart.php

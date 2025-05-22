@@ -1,0 +1,144 @@
+.product-card {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px 50px;
+  gap: 15px;
+
+  &__pictures-holder {
+    width: calc((60%) - 15px);
+    max-width: 750px;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__text-holder {
+    width: calc((43%) - 15px);
+    min-width: 215px;
+    max-width: 450px;
+    padding: 10px 15px;
+
+    & .title-font-style {
+      text-transform: none;
+      font-size: 23px;
+      line-height: 32px;
+    }
+    & .products_header {
+      text-align: center;
+    }
+    & .regular-text-font-style {
+      line-height: 26px;
+    }
+  }
+
+  &__big-picture {
+    min-width: 215px;
+    max-width: 695px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__preview-picture-holder {
+    min-width: 295px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  &__preview-picture,
+  &__preview-picture img {
+    width: 215px;
+    min-width: 185px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  &__preview-picture img {
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  &__product-preview-link {
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      background: url(../img/icons/zoom-icon.svg) no-repeat;
+      top: 35%;
+      left: 35%;
+      transform: translate(50%);
+      opacity: 1;
+      z-index: 9;
+    }
+
+    &:focus:before {
+      opacity: 0.6;
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
+
+    &:hover .img {
+      opacity: 1;
+    }
+  }
+}
+
+.product-card__big-picture,
+.product-card__preview-picture,
+.product-card__text-holder {
+  border: $section-border-style;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 830px) {
+  .product-card {
+    padding: 0 10px 30px;
+
+    &__text-holder {
+      & .title-font-style {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      & .regular-text-font-style {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .product-card__pictures-holder,
+  .product-card__text-holder {
+    width: calc(97% - 20px);
+    max-width: 750px;
+    align-items: center;
+    text-align: center;
+  }
+  .product-card {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .product-card__text-holder {
+    padding: 5px;
+
+    & .title-font-style {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}

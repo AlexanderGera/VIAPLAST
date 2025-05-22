@@ -1,0 +1,29 @@
+.products-list-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.products-item.catalog-item {
+  height: 560px;
+  justify-content: space-between;
+}
+
+.products-item__picture.catalog-item__picture {
+  height: 285px;
+}
+
+.products-item.no_link {
+  height: 525px;
+  justify-content: flex-start;
+  gap: 15px;
+
+  & .card-text-font-style {
+    font-size: 16px;
+  }
+}

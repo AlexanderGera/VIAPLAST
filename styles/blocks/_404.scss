@@ -1,0 +1,17 @@
+.main-page-intro.no_page {
+  justify-content: center;
+
+  & .main-page-intro__text-holder {
+    text-align: center;
+
+    & a {
+      text-decoration: underline;
+      color: #38a3f3;
+    }
+  }
+
+  & .title-font-style {
+    margin-bottom: 35px;
+  }
+
+}
