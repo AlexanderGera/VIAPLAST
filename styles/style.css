@@ -130,6 +130,7 @@ input {
   cursor: pointer;
   width: 225px;
   height: 50px;
+  transition: all 0.2s ease-in-out;
 }
 .button-link-decoration:hover,
 .button-regular-decoration:hover {
@@ -137,7 +138,7 @@ input {
   background: #55B7FF;
   box-shadow: 3px 2px 12px 3px rgba(75, 85, 98, 0.3);
   border: none;
-  transition: all 0.2s ease-in-out;
+  transform: scale(1.05);
 }
 
 .button-link-decoration {
@@ -346,6 +347,30 @@ p {
   margin-bottom: 35px;
 }
 
+.products-item__picture,
+.about-pictures-holder__picture,
+.product-section-holder__picture,
+.main-page-intro__video-holder iframe,
+.product-card__big-picture,
+.product-card__preview-picture,
+.pdf-container img {
+  box-shadow: -2px 2px 8px 2px rgba(85, 183, 255, 0.4);
+}
+
+.logo,
+.main-page-intro__video-holder iframe,
+.products-item__picture,
+.product-section-holder__picture {
+  transition: all 0.2s ease-in-out;
+}
+
+@media (hover: hover) {
+  .logo:hover,
+  .main-page-intro__video-holder iframe:hover,
+  .products-item__picture:hover {
+    transform: scale(1.05);
+  }
+}
 .header {
   background: url(../img/icons/city_bg.png), linear-gradient(251.06deg, #3C7FD4 -2.19%, #55B7FF 103.21%);
   background-position: bottom center;
@@ -390,6 +415,7 @@ p {
   opacity: 0.9;
   position: relative;
   display: inline-block;
+  transition: all 0.2s ease-in-out;
 }
 .header-menu__link:before {
   content: "";
@@ -414,6 +440,7 @@ p {
 }
 .header-menu__link:hover, .header-menu__link:focus, .header-menu__link:active, .header-menu__link.active {
   opacity: 1;
+  transform: scale(1.1);
 }
 .header-menu__divider {
   width: 1px;
@@ -448,12 +475,14 @@ p {
   line-height: 24px;
   padding: 0 6%;
   margin-right: 10px;
+  transition: all 0.2s ease-in-out;
 }
 .header-menu__link_lang:last-child {
   margin-right: 0;
 }
 .header-menu__link_lang:hover, .header-menu__link_lang.active {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .social-icons-item {
@@ -462,8 +491,12 @@ p {
 .social-icons-item:last-child {
   margin-right: 0;
 }
+.social-icons-item svg {
+  transition: all 0.2s ease-in-out;
+}
 .social-icons-item:hover svg {
   fill: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
 }
 
 .hamburger-menu {
@@ -582,7 +615,7 @@ p {
   min-height: 435px;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0px -4px 16px -2px rgba(75, 85, 98, 0.2);
+  box-shadow: -2px 2px 8px 2px rgba(85, 183, 255, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -870,6 +903,7 @@ p {
 .pdf-container img {
   width: 100%;
   height: 100%;
+  border-radius: 12px;
 }
 
 .products-item__link-follow.document-item {
