@@ -70,7 +70,14 @@
     box-shadow: 3px 2px 12px 3px rgba(75, 85, 98, 0.3);
     border: none;
     transform: scale(1.05);
+  }
 
+  &.hover {
+    color: #fff;
+    background: #55B7FF;
+    box-shadow: 3px 2px 12px 3px rgba(75, 85, 98, 0.3);
+    border: none;
+    transform: scale(1.05);
   }
 }
 
@@ -330,15 +337,17 @@ p {
 
 .logo,
 .main-page-intro__video-holder iframe,
-.products-item__picture,
-.product-section-holder__picture, {
+.products-item__picture {
   transition: all 0.2s ease-in-out;
 }
 
 @media (hover: hover) {
   .logo:hover,
   .main-page-intro__video-holder iframe:hover,
-  .products-item__picture:hover, {
+  .products-item__picture:hover,
+  .product-card__preview-picture:hover,
+  .product-section-holder__picture:hover {
     transform: scale(1.05);
   }
+
 }

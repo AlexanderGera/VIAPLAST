@@ -17,6 +17,7 @@ let headerMenu = document.getElementsByClassName('header-menu')[0];
 let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
 
 hamburgerMenu.addEventListener('click', mobileMenuToggle);
+
 function mobileMenuToggle() {
     headerMenu.classList.toggle('active');
     hamburgerMenu.classList.toggle('active');
@@ -50,6 +51,7 @@ if (pageLanguage === 'uk') {
 
 engLangButton.addEventListener('click', englishPageOpen);
 ukrLangButton.addEventListener('click', ukrPageOpen);
+
 function englishPageOpen(event) {
     event.preventDefault();
     let currentURL = window.location.href;
@@ -85,6 +87,7 @@ let listOfInputs = document.getElementsByClassName('contact-form__input');
 
 //not send the form when key Enter pressed
 enterShutDown();
+
 function enterShutDown() {
     Array.from(listOfInputs).forEach((element) => {
         element.addEventListener('keydown', (event) => {
@@ -94,6 +97,7 @@ function enterShutDown() {
         });
     });
 }
+
 function formValidation() {
     let isValid = true;
     Array.from(listOfInputs).forEach((element) => {
@@ -110,10 +114,12 @@ function formValidation() {
     });
     return isValid;
 }
+
 function emailChecking(element) {
     let stringForEmailTesting = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return stringForEmailTesting.test(element.value);
 }
+
 contactForm.addEventListener('submit', (event) => {
     if (!formValidation()) {
         event.preventDefault();
@@ -165,6 +171,7 @@ let newObserver = new IntersectionObserver(makeItemVisible, {
     threshold: 0.1,
     rootMargin: "35px",
 });
+
 function makeItemVisible(entries, newObserver) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -172,6 +179,28 @@ function makeItemVisible(entries, newObserver) {
         }
     });
 }
+
 itemsForAnimation.forEach(items => {
     newObserver.observe(items);
 })
+
+//-----products button click -----//
+
+let productsItemHolder = document.querySelectorAll('.product-section-holder');
+
+productsItemHolder.forEach(holder => {
+    let productItemButton = holder.querySelector('.button-link-decoration');
+    let productItemPicture = holder.querySelector('.product-section-holder__picture');
+    productHolderMouseWatcher(productItemButton, productItemPicture);
+    productHolderMouseWatcher(productItemPicture, productItemButton);
+
+})
+
+function productHolderMouseWatcher(elementActive, elementPassiv) {
+    elementActive.addEventListener('mouseenter', (event) => {
+        elementPassiv.classList.add('hover');
+    });
+    elementActive.addEventListener('mouseleave', (event) => {
+        elementPassiv.classList.remove('hover');
+    })
+}
