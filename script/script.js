@@ -193,6 +193,7 @@ productsItemHolder.forEach(holder => {
     let productItemPicture = holder.querySelector('.product-section-holder__picture');
     productHolderMouseWatcher(productItemButton, productItemPicture);
     productHolderMouseWatcher(productItemPicture, productItemButton);
+    onClickLinkOpen(productItemPicture, productItemButton);
 
 })
 
@@ -202,5 +203,12 @@ function productHolderMouseWatcher(elementActive, elementPassiv) {
     });
     elementActive.addEventListener('mouseleave', (event) => {
         elementPassiv.classList.remove('hover');
+    })
+}
+
+function onClickLinkOpen(elementClick, elementLinked) {
+    elementClick.addEventListener('click', (event) => {
+        let href = elementLinked.getAttribute('href');
+        window.open(href, '_blank');
     })
 }
