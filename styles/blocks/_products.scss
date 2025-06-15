@@ -21,11 +21,6 @@
     border-radius: 15px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-
-    &.hover {
-      transform: scale(1.05);
-
-    }
   }
   &__description-holder {
     width: 400px;

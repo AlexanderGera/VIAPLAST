@@ -1,6 +1,7 @@
 'use strict';
 
 // -------------- slow scroll to anchor
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -191,9 +192,11 @@ let productsItemHolder = document.querySelectorAll('.product-section-holder');
 productsItemHolder.forEach(holder => {
     let productItemButton = holder.querySelector('.button-link-decoration');
     let productItemPicture = holder.querySelector('.product-section-holder__picture');
-    productHolderMouseWatcher(productItemButton, productItemPicture);
-    productHolderMouseWatcher(productItemPicture, productItemButton);
-    onClickLinkOpen(productItemPicture, productItemButton);
+    if (productItemButton && productItemPicture) {
+        productHolderMouseWatcher(productItemButton, productItemPicture);
+        productHolderMouseWatcher(productItemPicture, productItemButton);
+        onClickLinkOpen(productItemPicture, productItemButton);
+    }
 
 })
 
@@ -212,3 +215,39 @@ function onClickLinkOpen(elementClick, elementLinked) {
         window.open(href, '_blank');
     })
 }
+
+
+//slider
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        loop: true,
+        spaceBetween: 30,
+        speed: 800,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false, //Autoscroll stop after interaction
+            pauseOnMouseEnter: true,
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+
+});
